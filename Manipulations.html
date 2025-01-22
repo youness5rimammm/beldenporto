@@ -37,7 +37,92 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.png">
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+<style>
+  .slider-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+}
 
+.slider-item {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  position: relative;
+  max-width: 90vh; /* Changed to viewport height units */
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.popup-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Added to maintain aspect ratio */
+  display: block;
+  border-radius: 10px;
+}
+
+/* Rest of the styles remain unchanged */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.popup-icon-wrapper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.popup-icon {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.popup-icon:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+</style>
 </head>
 
 <body id="top">
@@ -155,276 +240,205 @@
       <!-- 
         - #PROJECTS
       -->
-
       <section class="section project" aria-label="my latest projects" id="project">
-
         <ul class="slider-list">
-
-            <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-1.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-1.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-
-          
-
-              <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 90;">
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-2.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-2.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-              <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-3.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-3.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-          
-
-        </ul>
-
-        <ul class="slider-list">
-
-            <li class="slider-item">
-              <div class="project-card text-center">
-  
-                <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
-                  <img src="assets/images/manipulation-4.png" width="1000" height="763" loading="lazy"
-                    alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-  
-                  <a href="index.html" class="btn btn:hover">
-                    <span class="span">Back home</span>
-  
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-  
-                
-  
               </div>
-            </li>
-  
-  
-            
-  
-            <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+                    <img src="assets/images/manipulation-4.png" width="1000" height="763" loading="lazy"
+                      alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-4.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-5.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-5.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-  
-              <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-6.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-6.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-              
-            
-  
-          </ul>
-
-
-          <ul class="slider-list">
-
-            <li class="slider-item">
-              <div class="project-card text-center">
-  
-                <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
-                  <img src="assets/images/manipulation-7.png" width="1000" height="763" loading="lazy"
-                    alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-  
-                  <a href="index.html" class="btn btn:hover">
-                    <span class="span">Back home</span>
-  
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-  
-                
-  
               </div>
-            </li>
-  
-  
-            <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+                    <img src="assets/images/manipulation-7.png" width="1000" height="763" loading="lazy"
+                      alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-7.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-8.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-8.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-  
-              <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-9.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-9.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-              
-            
-  
-          </ul>
-
-
-          <ul class="slider-list">
-
-            <li class="slider-item">
-              <div class="project-card text-center">
-  
-                <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
-                  <img src="assets/images/manipulation-10.png" width="1000" height="763" loading="lazy"
-                    alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-  
-                  <a href="index.html" class="btn btn:hover">
-                    <span class="span">Back home</span>
-  
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-  
-                
-  
               </div>
-            </li>
-  
-  
-            
-  
-            <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+                    <img src="assets/images/manipulation-10.png" width="1000" height="763" loading="lazy"
+                      alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-10.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-11.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-11.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-  
-              <li class="slider-item">
-                <div class="project-card text-center">
-    
-                  <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
                     <img src="assets/images/manipulation-12.png" width="1000" height="763" loading="lazy"
                       alt="Project poster: Creative & experienced digital design studio" class="img-cover">
-    
-                    <a href="index.html" class="btn btn:hover">
-                      <span class="span">Back home</span>
-    
-                      <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
-                  </div>
-    
-                  
-    
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-12.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
                 </div>
-              </li>
-
-              
-            
-  
-          </ul>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+                    <img src="assets/images/manipulation-13.png" width="1000" height="763" loading="lazy"
+                      alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-13.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="width: 100; height: 100;">
+                    <img src="assets/images/manipulation-14.png" width="1000" height="763" loading="lazy"
+                      alt="Project poster: Creative & experienced digital design studio" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/manipulation-14.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+         
+         
+        
+        </ul>
+      
+        <!-- Popup Modal -->
+        <div id="image-popup" class="popup-overlay">
+          <div class="popup-content">
+            <span id="close-popup" class="popup-close">&times;</span>
+            <img id="popup-img" src="" alt="Popup Image">
+          </div>
+        </div>
       </section>
+      
+      
 
 
 
@@ -582,19 +596,35 @@
  <!-- PLAY VEDIO -->
 
  <script>
-  function playVideo(button) {
-    const video = button.previousElementSibling;
-    
-    if (video.paused) {
-      video.play();
-      video.controls = true;
-      button.style.display = "none"; 
-    } else {
-      video.pause();
-      video.controls = false; 
-      button.style.display = "block"; 
-    }
+  
+// Selectors for popup functionality
+const popupIcons = document.querySelectorAll(".popup-icon");
+const popupOverlay = document.getElementById("image-popup");
+const popupImage = document.getElementById("popup-img");
+const closePopupBtn = document.getElementById("close-popup");
+
+// Add click event listeners to popup icons
+popupIcons.forEach(icon => {
+  icon.addEventListener("click", function () {
+    const imgSrc = this.getAttribute("data-src"); // Get image source from data-src
+    popupImage.setAttribute("src", imgSrc); // Set popup image source
+    popupOverlay.style.display = "flex"; // Show popup
+  });
+});
+
+// Close popup when 'X' is clicked
+closePopupBtn.addEventListener("click", () => {
+  popupOverlay.style.display = "none";
+});
+
+// Close popup when clicking outside the image
+popupOverlay.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    popupOverlay.style.display = "none";
   }
+});
+
+
 </script>
 
 </body>

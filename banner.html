@@ -38,6 +38,18 @@
   <link rel="preload" as="image" href="./assets/images/hero-shape-1.png">
   <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
   <style>
+     .slider-list {
+  display: flex;
+  flex-wrap: wrap; /* Prevent wrapping if you want a horizontal slider */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 20px; /* Space between items */
+  padding: 10px;
+}
+
+.slider-item {
+  flex: 0 0 auto; /* Prevent shrinking and define fixed size */
+  width: 300px; /* Adjust as needed */
+}
     /* Popup Overlay */
 .popup-overlay {
   display: none;
@@ -259,7 +271,86 @@
               </div>
             </div>
           </li>
-          <!-- Repeat for other images -->
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-3.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 3" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-3.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-4.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 4" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-4.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-5.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 5" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-5.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-6.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 6" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-6.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-7.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 7" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-7.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="assets/images/banner-8.png" width="1000" height="763" loading="lazy" 
+                     alt="Project poster 8" class="img-cover">
+                <div class="popup-icon-wrapper">
+                  <button class="popup-icon" data-src="assets/images/banner-8.png">
+                    <ion-icon name="expand-outline"></ion-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+         
+        
         </ul>
       
         <!-- Popup Modal -->
@@ -429,6 +520,7 @@
  <!-- PLAY VEDIO -->
 
  <script>
+  
 // Selectors for popup functionality
 const popupIcons = document.querySelectorAll(".popup-icon");
 const popupOverlay = document.getElementById("image-popup");

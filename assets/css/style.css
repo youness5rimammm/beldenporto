@@ -408,6 +408,11 @@ body.nav-active { overflow: hidden; }
 .nav-open-btn:is(:hover, :focus-visible) .line { background-color: var(--bg-white); }
 
 .nav-open-btn:is(:hover, :focus-visible) .line-1 { transform: scaleX(0.7); }
+.nav-open-btn:is(:hover, :focus-visible) .line-2 { transform: scaleX(0.7); }
+.nav-open-btn:is(:hover, :focus-visible) .line-3 { transform: scaleX(0.7); }
+.nav-open-btn:is(:hover, :focus-visible) .line-4 { transform: scaleX(0.7); }
+.nav-open-btn:is(:hover, :focus-visible) .line-5 { transform: scaleX(0.7); }
+.nav-open-btn:is(:hover, :focus-visible) .line-6 { transform: scaleX(0.7); }
 
 .nav-open-btn::before { background-color: var(--bg-white); }
 
