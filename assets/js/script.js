@@ -1,4 +1,3 @@
-'use strict';
 
 
 
@@ -183,4 +182,6 @@ addEventOnElements(hoveredElements, "mouseout", function () {
 });
 
 
-///////
+///////add event listener to play 
+
+ 

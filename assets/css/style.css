@@ -609,7 +609,50 @@ body.nav-active { overflow: hidden; }
 
 
 
+#playButton1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
 
+#playButton1.hidden {
+  display: none;
+}
+
+#playButton2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#playButton2.hidden {
+  display: none;
+}
+
+#playButton3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#playButton3.hidden {
+  display: none;
+}
 
 /*-----------------------------------*\
   #ABOUT
@@ -692,6 +735,7 @@ body.nav-active { overflow: hidden; }
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
+  text-align: center;
   justify-content: center;
   border-radius: var(--radius-circle);
   color: var(--text-smoky-black);
@@ -700,9 +744,9 @@ body.nav-active { overflow: hidden; }
 .interview-card .btn::before,
 .interview-card .btn::after { border-radius: inherit; }
 
-.interview-card .btn::before { background-color: var(--bg-white); }
+.interview-card .btn::before { background-color: var(--bg-white);  }
 
-.interview-card .btn:is(:hover, :focus-visible) { color: var(--text-white); }
+.interview-card .btn:is(:hover, :focus-visible) { color: var(--text-black); }
 
 .exhibition-card { position: relative; }
 
