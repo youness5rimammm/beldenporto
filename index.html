@@ -516,48 +516,58 @@
               <h3 class="h4 title section-title">
                 Turning Client Ambitions Into Stunning Visual Narratives.
               </h3>
-
+            
               <ul class="grid-list">
-
+            
                 <li>
                   <div class="award-card">
                     <figure class="card-banner img-holder" style="--width: 534; --height: 383;" data-tilt>
-                      <img src="assets/images/client-1.jpg" width="534" height="383" loading="lazy" alt="certificate"
-                        class="img-cover">
+                      <img src="assets/images/client-1.jpg" width="534" height="383" loading="lazy" alt="certificate" class="img-cover popup-trigger">
+                      <span class="popup-icon">🔍</span>
                     </figure>
                   </div>
                 </li>
-
-                <li>
-                  <div class="award-card">
-                    <figure class="card-banner img-holder" style="--width: 534; --height: 383;">
-                      <img src="assets/images/client-2.jpg" width="534" height="383"  alt="certificate"
-                        class="img-cover">
-                    </figure>
-                  </div>
-                </li>
-
                 <li>
                   <div class="award-card">
                     <figure class="card-banner img-holder" style="--width: 534; --height: 383;" data-tilt>
-                      <img src="assets/images/client-3.png" width="534" height="383" loading="lazy" alt="certificate"
-                        class="img-cover">
+                      <img src="assets/images/client-2.jpg" width="534" height="383" loading="lazy" alt="certificate" class="img-cover popup-trigger">
+                      <span class="popup-icon">🔍</span>
                     </figure>
                   </div>
                 </li>
-
+            
+                
+            
                 <li>
                   <div class="award-card">
                     <figure class="card-banner img-holder" style="--width: 534; --height: 383;" data-tilt>
-                      <img src="assets/images/client-4.jpg" width="534" height="383" loading="lazy" alt="certificate"
-                        class="img-cover">
+                      <img src="assets/images/client-3.png" width="534" height="383" loading="lazy" alt="certificate" class="img-cover popup-trigger">
+                      <span class="popup-icon">🔍</span>
                     </figure>
                   </div>
                 </li>
-
+            
+                <li>
+                  <div class="award-card">
+                    <figure class="card-banner img-holder" style="--width: 534; --height: 383;" data-tilt>
+                      <img src="assets/images/client-4.jpg" width="534" height="383" loading="lazy" alt="certificate" class="img-cover popup-trigger">
+                      <span class="popup-icon">🔍</span>
+                    </figure>
+                  </div>
+                </li>
+            
               </ul>
-
+            
             </div>
+            
+            <!-- Popup Modal -->
+            <div id="image-popup" class="popup-overlay">
+              <div class="popup-content">
+                <img id="popup-img" src="" alt="Enlarged Image">
+                <button id="close-popup" class="close-popup-btn">X</button>
+              </div>
+            </div>
+            
 <!-- video services -->
             <div class="tab-content" data-tab-content="exhibition">
               <ul class="grid-list">
@@ -1007,8 +1017,40 @@
    });
  });
  
+// Get all popup triggers and the popup elements
+const popupTriggers = document.querySelectorAll(".popup-trigger, .popup-icon");
+const popupOverlay = document.getElementById("image-popup");
+const popupImage = document.getElementById("popup-img");
+const closePopupBtn = document.getElementById("close-popup");
+
+// Add click event listeners to each image and icon
+popupTriggers.forEach(trigger => {
+  trigger.addEventListener("click", function () {
+    // Get the associated image source
+    const imgSrc = this.tagName === "SPAN" 
+      ? this.previousElementSibling.getAttribute("src") 
+      : this.getAttribute("src");
+
+    // Set the popup image source and display the popup
+    popupImage.setAttribute("src", imgSrc);
+    popupOverlay.style.display = "flex";
+  });
+});
+
+// Close the popup when the close button is clicked
+closePopupBtn.addEventListener("click", () => {
+  popupOverlay.style.display = "none";
+});
+
+// Close the popup when clicking outside the image
+popupOverlay.addEventListener("click", (e) => {
+  if (e.target === popupOverlay) {
+    popupOverlay.style.display = "none";
+  }
+});
  
  </script>
+
 </body>
 
 </html>

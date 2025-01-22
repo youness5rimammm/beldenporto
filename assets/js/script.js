@@ -184,4 +184,4 @@ addEventOnElements(hoveredElements, "mouseout", function () {
 
 ///////add event listener to play 
 
- 
+ // Get all popup triggers and the popup elements
